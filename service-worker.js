@@ -1,15 +1,15 @@
 const CACHE_NAME = 'dying-shark-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/game.js',
-  '/audio.js',
-  '/styles.css',
-  '/shark.png',
-  '/icon-192.png',
-  '/icon-512.png',
-  '/apple-touch-icon.png',
-  '/favicon.ico'
+  '/dying-shark/',
+  '/dying-shark/index.html',
+  '/dying-shark/game.js',
+  '/dying-shark/audio.js',
+  '/dying-shark/styles.css',
+  '/dying-shark/shark.png',
+  '/dying-shark/icon-192.png',
+  '/dying-shark/icon-512.png',
+  '/dying-shark/apple-touch-icon.png',
+  '/dying-shark/favicon.ico'
 ];
 
 // Install event - cache resources
@@ -40,7 +40,7 @@ self.addEventListener('fetch', (event) => {
       .catch(() => {
         // If both cache and network fail, show offline page
         if (event.request.destination === 'document') {
-          return caches.match('/index.html');
+          return caches.match('/dying-shark/index.html');
         }
       })
   );

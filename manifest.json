@@ -2,12 +2,12 @@
   "name": "Dying Shark",
   "short_name": "Dying Shark",
   "description": "A Flappy Bird-inspired game where you control a great white shark through underwater obstacles!",
-  "start_url": "/",
+  "start_url": "/dying-shark/",
   "display": "standalone",
   "background_color": "#0d2b4d",
   "theme_color": "#1a5490",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "/dying-shark/",
   "lang": "en",
   "icons": [
     {
