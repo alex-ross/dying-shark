@@ -1,0 +1,35 @@
+{
+  "name": "Dying Shark",
+  "short_name": "Dying Shark",
+  "description": "A Flappy Bird-inspired game where you control a great white shark through underwater obstacles!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d2b4d",
+  "theme_color": "#1a5490",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "screenshots": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
