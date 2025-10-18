@@ -80,15 +80,16 @@ class FlappySharkGame {
     }
 
     setupEventListeners() {
-        // Start button
-        document.getElementById('startButton').addEventListener('click', () => {
-            this.startGame();
-        });
-
-        // Mute button
-        document.getElementById('muteButton').addEventListener('click', () => {
-            const isMuted = audioManager.toggleMute();
-            document.getElementById('muteButton').textContent = isMuted ? '🔇' : '🔊';
+        // Use event delegation for dynamically created buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'startButton') {
+                this.startGame();
+            } else if (e.target.id === 'restartButton') {
+                this.restartGame();
+            } else if (e.target.id === 'muteButton') {
+                const isMuted = audioManager.toggleMute();
+                document.getElementById('muteButton').textContent = isMuted ? '🔇' : '🔊';
+            }
         });
 
         // Game controls
@@ -106,6 +107,17 @@ class FlappySharkGame {
         this.canvas.addEventListener('touchstart', (e) => {
             e.preventDefault();
             this.handleInput();
+        });
+
+        // Add touch events to document for better mobile support
+        document.addEventListener('touchstart', (e) => {
+            // Check if it's a button click
+            if (e.target.tagName === 'BUTTON') {
+                e.preventDefault();
+                e.target.click();
+            } else {
+                this.handleInput();
+            }
         });
 
         // Prevent scrolling on touch
@@ -492,9 +504,6 @@ class FlappySharkGame {
                 <p>Press SPACE, click or tap to swim!</p>
                 <button id="startButton">Start Game</button>
             `;
-            document.getElementById('startButton').addEventListener('click', () => {
-                this.startGame();
-            });
         } else if (this.gameState === 'GAME_OVER') {
             gameMessage.classList.remove('hidden');
             gameMessage.innerHTML = `
@@ -503,9 +512,6 @@ class FlappySharkGame {
                 <p>Best: ${this.highScore}</p>
                 <button id="restartButton">Play Again</button>
             `;
-            document.getElementById('restartButton').addEventListener('click', () => {
-                this.restartGame();
-            });
         } else {
             gameMessage.classList.add('hidden');
         }
