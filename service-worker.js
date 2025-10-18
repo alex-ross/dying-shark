@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dying-shark-v1';
+const CACHE_NAME = 'dying-shark-v2';
 const urlsToCache = [
   '/dying-shark/',
   '/dying-shark/index.html',
